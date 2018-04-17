@@ -1,0 +1,14 @@
+Started GET "/" for 127.0.0.1 at 2018-04-17 13:33:21 +0530
+Processing by ApplicationController#hello as HTML
+  Rendering html template
+  Rendered html template (0.0ms)
+Completed 200 OK in 8ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/bye" for 127.0.0.1 at 2018-04-17 13:33:26 +0530
+Processing by ApplicationController#bye as HTML
+  Rendering html template
+  Rendered html template (0.1ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
