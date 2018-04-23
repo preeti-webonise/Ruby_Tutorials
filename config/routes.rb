@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   get 'about', to: 'static_pages#about'  
   resources :posts
   resources :users
-  root 'application#hello'
+  root 'application#hello' 
+  get  'signup',  to: 'users#new'
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+ # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
