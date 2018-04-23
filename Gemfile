@@ -24,6 +24,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'therubyracer' #added this for js  
 gem 'mysql2' #added this for mysql
+gem 'bootstrap-sass', '3.3.7' #added this for bootstarp framework
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
