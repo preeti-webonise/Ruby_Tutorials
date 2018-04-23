@@ -28,6 +28,7 @@ development:
 test:
   <<: *default
   # database: db/test.sqlite3 #commented this to connect it to default database
+  database: ruby_test
 
 production:
   <<: *default
