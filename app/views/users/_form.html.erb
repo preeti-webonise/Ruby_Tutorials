@@ -21,7 +21,17 @@
     <%= form.text_field :email %>
   </div>
 
+  <div>
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </div>
+
+  <div>
+    <%= form.label :password_confirmation, "Confirmation" %>
+    <%= form.password_field :password_confirmation %>
+  </div>
+      
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Create my account", class: "btn btn-primary" %>
   </div>
 <% end %>

@@ -1,14 +1,36 @@
-<p id="notice"><%= notice %></p>
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+    <p id="notice"><%= notice %></p>
+	<%= gravatar_for @user %>
+	<p>
+	  <strong>Name:</strong>
+	  <%= @user.name %>
+	</p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+	<p>
+	  <strong>Email:</strong>
+	  <%= @user.email %>
+	</p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+	<p>
+	  <strong>Created At:</strong>
+	  <%= @user.created_at %>
+	</p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+	<p>
+	  <strong>Updated User At:</strong>
+	  <%= @user.updated_at %>
+	</p>
+
+	<p>
+	  <strong>Current time:</strong>
+	  <%= Time.now %>
+	</p>
+
+	<%= link_to 'Edit', edit_user_path(@user) %> |
+	<%= link_to 'Back', users_path %>
+    </section>
+  </aside>
+</div>
