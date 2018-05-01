@@ -4,3 +4,9 @@ Shriya:
   name: Shriya Diwate
   email: shriya.diwate@weboniselab.com
   password_digest: <%= User.digest('test123456') %>
+
+
+Shraddha:
+  name: Shraddha Solanki
+  email: shraddha@weboapps.com
+  password_digest: <%= User.digest('test123456') %>
