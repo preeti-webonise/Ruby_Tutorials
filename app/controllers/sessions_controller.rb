@@ -9,7 +9,6 @@ class SessionsController < ApplicationController
       log_in user
       params[:session][:remember_me] ? remember(user) : forget(user)
       # redirect_to user
-      debugger
       redirect_back_or user
     else
       # Create an error message.

@@ -3,10 +3,18 @@
 Shriya:
   name: Shriya Diwate
   email: shriya.diwate@weboniselab.com
-  password_digest: <%= User.digest('test123456') %>
+  password_digest: <%= User.digest('test123456') %> 
+  admin: true 
 
 
 Shraddha:
   name: Shraddha Solanki
   email: shraddha@weboapps.com
   password_digest: <%= User.digest('test123456') %>
+
+<% 50.times do |n| %>
+user_<%= n %>:
+  name:  <%= "User #{n}" %>
+  email: <%= "user-#{n}@example.com" %>
+  password_digest: <%= User.digest('password') %>
+<% end %>
