@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'account_activations/edit'
   get 'sessions/new'
   # get 'static_pages/home' #by default created routes
   get 'home', to: 'static_pages#home'  
