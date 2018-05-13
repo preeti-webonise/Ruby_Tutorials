@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'account_activations/edit'
   get 'sessions/new'
   # get 'static_pages/home' #by default created routes
   get 'home', to: 'static_pages#home'  
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
   get    '/login', to: 'sessions#new'
   post   '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
+  resources :account_activations, only: [:edit]
 
  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -5,16 +5,22 @@ Shriya:
   email: shriya.diwate@weboniselab.com
   password_digest: <%= User.digest('test123456') %> 
   admin: true 
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
 
 Shraddha:
   name: Shraddha Solanki
   email: shraddha@weboapps.com
   password_digest: <%= User.digest('test123456') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
 <% 50.times do |n| %>
 user_<%= n %>:
   name:  <%= "User #{n}" %>
   email: <%= "user-#{n}@example.com" %>
   password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
 <% end %>
