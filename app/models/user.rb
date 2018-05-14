@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  attr_accessor :rememberToken, :activationToken
+  attr_accessor :rememberToken, :activationToken, :resetToken
 	before_save :downcaseEmail
   before_create :createActivationDigest
 	has_many :posts
@@ -49,6 +49,22 @@ class User < ApplicationRecord
   # Sends activation email.
   def sendActivationEmail
     UserMailer.account_activation(self).deliver_now
+  end
+
+  # Sets the password reset attributes.
+  def createResetDigest
+    self.resetToken = User.newToken
+    update_columns(reset_digest: User.digest(resetToken), reset_sent_at: Time.zone.now)
+  end
+
+  # Sends password reset email.
+  def sendPasswordResetEmail
+    UserMailer.password_reset(self).deliver_now
+  end
+
+  # Returns true if a password reset has expired.
+  def passwordResetExpired?
+    reset_sent_at < 2.hours.ago
   end
 
   private
