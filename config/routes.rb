@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   get 'help', to: 'static_pages#help'  
   # get 'static_pages/about'
   get 'about', to: 'static_pages#about'  
-  resources :posts
   resources :users
   root 'application#hello' 
   get  'signup', to: 'users#new'
