@@ -2,7 +2,7 @@ class User < ApplicationRecord
   attr_accessor :rememberToken, :activationToken, :resetToken
 	before_save :downcaseEmail
   before_create :createActivationDigest
-	has_many :posts
+	has_many :microposts, dependent: :destroy
 	validates :name, presence: true, length: { maximum: 50 }
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 	validates :email, presence: true, length: { maximum: 255}, 
@@ -65,6 +65,12 @@ class User < ApplicationRecord
   # Returns true if a password reset has expired.
   def passwordResetExpired?
     reset_sent_at < 2.hours.ago
+  end
+
+  # Defines a proto-feed.
+  # See "Following users" for the full implementation.
+  def feed
+    Micropost.where("user_id = ?", id)
   end
 
   private
