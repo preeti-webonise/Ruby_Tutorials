@@ -3,7 +3,7 @@
 Shriya:
   name: Shriya Diwate
   email: shriya.diwate@weboniselab.com
-  password_digest: <%= User.digest('test123456') %> 
+  password_digest: <%= User.digest('password') %> 
   admin: true 
   activated: true
   activated_at: <%= Time.zone.now %>
@@ -12,7 +12,7 @@ Shriya:
 Shraddha:
   name: Shraddha Solanki
   email: shraddha@weboapps.com
-  password_digest: <%= User.digest('test123456') %>
+  password_digest: <%= User.digest('password') %>
   activated: true
   activated_at: <%= Time.zone.now %>
 

@@ -31,6 +31,8 @@ gem 'rails-controller-testing'
 gem 'faker',                   '1.8.6'
 gem 'will_paginate',           '3.1.6'
 gem 'bootstrap-will_paginate', '1.0.0'
+gem 'carrierwave',             '1.2.2'
+
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
@@ -38,7 +40,7 @@ gem 'bootstrap-will_paginate', '1.0.0'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
+gem 'mini_magick', '~> 4.8'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
