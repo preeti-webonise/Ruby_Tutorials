@@ -1,0 +1,15 @@
+one:
+  follower: Shriya
+  followed: Anuj
+
+two:
+  follower: Shriya
+  followed: Preeti
+
+three:
+  follower: Anuj
+  followed: Shriya
+
+four:
+  follower: Shraddha
+  followed: Shriya  

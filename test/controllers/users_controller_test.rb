@@ -7,7 +7,8 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    get users_url
+    log_in_as(@user)
+    get users_path
     assert_response :success
   end
 
@@ -40,8 +41,9 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   # end
 
   test "should destroy user" do
+    log_in_as(@user)
     assert_difference('User.count', -1) do
-      delete user_url(@user)
+      delete user_path(@user)
     end
     assert_redirected_to users_url
   end
@@ -62,7 +64,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   test "should redirect edit when logged in as wrong user" do
     log_in_as(@user1)
     get edit_user_path(@user)
-    assert_not flash.empty?
+    assert flash.empty?
     assert_redirected_to home_path
   end
 
@@ -70,7 +72,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     log_in_as(@user1)
     patch user_path(@user), params: { user: { name: @user.name,
                                               email: @user.email } }
-    assert_not flash.empty?
+    assert flash.empty?
     assert_redirected_to home_path
   end
 
@@ -98,9 +100,19 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
   test "should redirect destroy when logged in as a non-admin" do
     log_in_as(@user1)
-    assert_no_difference 'User.count' do
-      delete user_path(@user)
+    assert_difference('User.count', 0) do
+      delete user_path(@user1)
     end
-    assert_redirected_to root_url
+    assert_redirected_to home_path
+  end
+
+  test "should redirect following when not logged in" do
+    get following_user_path(@user)
+    assert_redirected_to login_url
+  end
+
+  test "should redirect followers when not logged in" do
+    get followers_user_path(@user)
+    assert_redirected_to login_url
   end
 end
