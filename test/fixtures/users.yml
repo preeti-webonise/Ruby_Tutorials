@@ -8,10 +8,37 @@ Shriya:
   activated: true
   activated_at: <%= Time.zone.now %>
 
-
 Shraddha:
   name: Shraddha Solanki
   email: shraddha@weboapps.com
+  password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
+
+Preeti:
+  name: Preeti Bhosale
+  email: preeti.bhosale@weboniselab.com
+  password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
+
+Anuj:
+  name: Anuj Shah
+  email: anuj.shah@weboniselab.com
+  password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
+
+testUser1:
+  name: testUser1
+  email: testUser1@weboapps.com
+  password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
+
+testUser2:
+  name: testUser2
+  email: testUser2@weboapps.com
   password_digest: <%= User.digest('password') %>
   activated: true
   activated_at: <%= Time.zone.now %>
